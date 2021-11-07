@@ -1,0 +1,209 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local asdasd = Instance.new("ScreenGui")
+local newawarGui = Instance.new("Frame")
+local x = Instance.new("TextButton")
+local DumbAssGui = Instance.new("TextLabel")
+local Frame = Instance.new("Frame")
+local rebirthbutton = Instance.new("TextButton")
+local autoclicker = Instance.new("TextLabel")
+local autoclickerbutton = Instance.new("TextButton")
+local rebirthtext = Instance.new("TextLabel")
+
+--Properties:
+
+asdasd.Name = "asdasd"
+asdasd.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+asdasd.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+newawarGui.Name = "newawarGui"
+newawarGui.Parent = asdasd
+newawarGui.BackgroundColor3 = Color3.fromRGB(0, 0, 35)
+newawarGui.BorderColor3 = Color3.fromRGB(27, 42, 53)
+newawarGui.Position = UDim2.new(0.260932952, 0, 0.387481391, 0)
+newawarGui.Size = UDim2.new(0, 301, 0, 226)
+
+x.Name = "x"
+x.Parent = newawarGui
+x.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+x.Position = UDim2.new(0.926910281, 0, 0, 0)
+x.Size = UDim2.new(0, 22, 0, 22)
+x.Font = Enum.Font.SourceSans
+x.Text = "X"
+x.TextColor3 = Color3.fromRGB(0, 0, 0)
+x.TextSize = 14.000
+
+DumbAssGui.Name = "Dumb Ass Gui"
+DumbAssGui.Parent = newawarGui
+DumbAssGui.BackgroundColor3 = Color3.fromRGB(0, 0, 35)
+DumbAssGui.BorderColor3 = Color3.fromRGB(0, 0, 35)
+DumbAssGui.Position = UDim2.new(0.169435218, 0, 0, 0)
+DumbAssGui.Size = UDim2.new(0, 200, 0, 22)
+DumbAssGui.Font = Enum.Font.PatrickHand
+DumbAssGui.Text = "Dumb Ass Gui"
+DumbAssGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+DumbAssGui.TextSize = 36.000
+
+Frame.Parent = newawarGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0, 0, 0.0973451361, 0)
+Frame.Size = UDim2.new(0, 301, 0, 11)
+
+rebirthbutton.Name = "rebirthbutton"
+rebirthbutton.Parent = newawarGui
+rebirthbutton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+rebirthbutton.Position = UDim2.new(0.0398671106, 0, 0.362831861, 0)
+rebirthbutton.Size = UDim2.new(0, 29, 0, 23)
+rebirthbutton.Font = Enum.Font.SourceSans
+rebirthbutton.Text = ""
+rebirthbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+rebirthbutton.TextSize = 14.000
+
+autoclicker.Name = "autoclicker"
+autoclicker.Parent = newawarGui
+autoclicker.BackgroundColor3 = Color3.fromRGB(0, 0, 35)
+autoclicker.BorderColor3 = Color3.fromRGB(0, 0, 35)
+autoclicker.Position = UDim2.new(0.169435218, 0, 0.221238941, 0)
+autoclicker.Size = UDim2.new(0, 59, 0, 16)
+autoclicker.Font = Enum.Font.PermanentMarker
+autoclicker.Text = "Autoclicker"
+autoclicker.TextColor3 = Color3.fromRGB(255, 255, 255)
+autoclicker.TextSize = 16.000
+
+autoclickerbutton.Name = "autoclickerbutton"
+autoclickerbutton.Parent = newawarGui
+autoclickerbutton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+autoclickerbutton.Position = UDim2.new(0.0398671106, 0, 0.207964629, 0)
+autoclickerbutton.Size = UDim2.new(0, 29, 0, 23)
+autoclickerbutton.Font = Enum.Font.SourceSans
+autoclickerbutton.Text = ""
+autoclickerbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+autoclickerbutton.TextSize = 14.000
+
+rebirthtext.Name = "rebirthtext"
+rebirthtext.Parent = newawarGui
+rebirthtext.BackgroundColor3 = Color3.fromRGB(0, 0, 35)
+rebirthtext.BorderColor3 = Color3.fromRGB(0, 0, 35)
+rebirthtext.Position = UDim2.new(0.202657804, 0, 0.376106203, 0)
+rebirthtext.Size = UDim2.new(0, 59, 0, 16)
+rebirthtext.Font = Enum.Font.PermanentMarker
+rebirthtext.Text = "Rebirth x 500k"
+rebirthtext.TextColor3 = Color3.fromRGB(255, 255, 255)
+rebirthtext.TextSize = 16.000
+
+-- Scripts:
+
+local function MCWFEIW_fake_script() -- newawarGui.dragScript 
+	local script = Instance.new('LocalScript', newawarGui)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(MCWFEIW_fake_script)()
+local function EXYEXH_fake_script() -- x.closeScript 
+	local script = Instance.new('LocalScript', x)
+
+	local player = game.Players.LocalPlayer
+	script.Parent.MouseButton1Click:Connect(function()
+		player.PlayerGui.asdasd:Destroy()
+	
+	end)
+end
+coroutine.wrap(EXYEXH_fake_script)()
+local function LOBHB_fake_script() -- rebirthbutton.arbscript 
+	local script = Instance.new('LocalScript', rebirthbutton)
+
+	hh = script.Parent
+	xx = false
+	kk = false
+	script.Parent.MouseButton1Click:Connect(function()
+		if xx == false then
+			xx = true
+			
+			if kk == false then
+				
+				hh.BackgroundColor3 = Color3.new(0, 0, 1)
+				
+				while xx do
+					wait(.0000001)
+				workspace.Events.Give14:FireServer()
+				
+				end			
+			end
+			
+		else hh.BackgroundColor3 = Color3.new(1, 0, 0)
+			xx = false
+		end
+		kk = false
+	end)
+end
+coroutine.wrap(LOBHB_fake_script)()
+local function SITSJF_fake_script() -- autoclickerbutton.acscript 
+	local script = Instance.new('LocalScript', autoclickerbutton)
+
+	tt = script.Parent
+	ff = false
+	gg = false
+	script.Parent.MouseButton1Click:Connect(function()
+		if ff == false then
+			ff = true
+			
+			if gg == false then
+				
+				tt.BackgroundColor3 = Color3.new(0, 0, 1)
+				
+				while ff do
+					wait(.0000001)
+					
+					workspace.Events.Give:FireServer()
+					
+				end
+			end
+			
+		else tt.BackgroundColor3 = Color3.new(1, 0, 0)
+			ff = false
+		end
+		gg = false
+	end)
+end
+coroutine.wrap(SITSJF_fake_script)()
