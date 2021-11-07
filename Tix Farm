@@ -60,7 +60,7 @@ local function NIBJL_fake_script() -- TextButton.LocalScript
 			if gg == false then
 				script.Parent.BackgroundColor3 = Color3.new(0,1,0)
 				while ff do
-					wait()
+					
 				
 				
 				for i,v in pairs(game.workspace:GetDescendants()) do
