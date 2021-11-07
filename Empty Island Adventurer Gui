@@ -1,0 +1,267 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ghfj = Instance.new("ScreenGui")
+local Gradient = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+local UICorner = Instance.new("UICorner")
+local btow = Instance.new("TextLabel")
+local guiTitle = Instance.new("TextLabel")
+local kowe = Instance.new("TextLabel")
+local getcoinsbutton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Shadow = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local Bringtreasures = Instance.new("TextButton")
+local killallenemiesinow = Instance.new("TextButton")
+
+--Properties:
+
+ghfj.Name = "ghfj"
+ghfj.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Gradient.Name = "Gradient"
+Gradient.Parent = ghfj
+Gradient.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Gradient.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Gradient.BorderSizePixel = 0
+Gradient.Position = UDim2.new(0.173769295, 0, 0.443038017, 0)
+Gradient.Size = UDim2.new(0, 398, 0, 216)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 45, 113)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(197, 66, 110))}
+UIGradient.Parent = Gradient
+
+UICorner.CornerRadius = UDim.new(0, 4)
+UICorner.Parent = Gradient
+
+btow.Name = "btow"
+btow.Parent = Gradient
+btow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+btow.BackgroundTransparency = 1.000
+btow.BorderSizePixel = 0
+btow.Position = UDim2.new(0.0854271352, 0, 0.467592597, 0)
+btow.Size = UDim2.new(0, 168, 0, 42)
+btow.Font = Enum.Font.SourceSans
+btow.Text = "Bring OW Treasures"
+btow.TextColor3 = Color3.fromRGB(0, 0, 0)
+btow.TextSize = 14.000
+
+guiTitle.Name = "guiTitle"
+guiTitle.Parent = Gradient
+guiTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+guiTitle.Size = UDim2.new(0, 398, 0, 41)
+guiTitle.Font = Enum.Font.GothamBlack
+guiTitle.Text = "EIA Gui"
+guiTitle.TextColor3 = Color3.fromRGB(0, 0, 0)
+guiTitle.TextSize = 48.000
+
+kowe.Name = "kowe"
+kowe.Parent = Gradient
+kowe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+kowe.BackgroundTransparency = 1.000
+kowe.BorderSizePixel = 0
+kowe.Position = UDim2.new(0.0653266311, 0, 0.231481478, 0)
+kowe.Size = UDim2.new(0, 168, 0, 42)
+kowe.Font = Enum.Font.SourceSans
+kowe.Text = "Kill OW Enemies"
+kowe.TextColor3 = Color3.fromRGB(0, 0, 0)
+kowe.TextSize = 14.000
+
+getcoinsbutton.Name = "getcoinsbutton"
+getcoinsbutton.Parent = Gradient
+getcoinsbutton.BackgroundColor3 = Color3.fromRGB(77, 100, 150)
+getcoinsbutton.BorderSizePixel = 0
+getcoinsbutton.Position = UDim2.new(0.0165725816, 0, 0.712904334, 0)
+getcoinsbutton.Size = UDim2.new(0, 101, 0, 45)
+getcoinsbutton.ZIndex = 2
+getcoinsbutton.Font = Enum.Font.GothamSemibold
+getcoinsbutton.Text = ""
+getcoinsbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+getcoinsbutton.TextScaled = true
+getcoinsbutton.TextSize = 14.000
+getcoinsbutton.TextWrapped = true
+
+UICorner_2.CornerRadius = UDim.new(1, 0)
+UICorner_2.Parent = getcoinsbutton
+
+Shadow.Name = "Shadow"
+Shadow.Parent = getcoinsbutton
+Shadow.BackgroundColor3 = Color3.fromRGB(53, 69, 103)
+Shadow.BorderSizePixel = 0
+Shadow.Size = UDim2.new(1, 0, 1, 4)
+
+UICorner_3.CornerRadius = UDim.new(1, 0)
+UICorner_3.Parent = Shadow
+
+TextLabel.Parent = getcoinsbutton
+TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.5, 0, 0.544444442, 0)
+TextLabel.Size = UDim2.new(1, -20, 1, -20)
+TextLabel.ZIndex = 2
+TextLabel.Font = Enum.Font.GothamSemibold
+TextLabel.Text = "Get 1Mil Coins"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+Bringtreasures.Name = "Bringtreasures"
+Bringtreasures.Parent = Gradient
+Bringtreasures.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Bringtreasures.Position = UDim2.new(0.0427135676, 0, 0.486111104, 0)
+Bringtreasures.Size = UDim2.new(0, 35, 0, 35)
+Bringtreasures.Font = Enum.Font.SourceSans
+Bringtreasures.Text = ""
+Bringtreasures.TextColor3 = Color3.fromRGB(0, 0, 0)
+Bringtreasures.TextSize = 14.000
+
+killallenemiesinow.Name = "killallenemiesinow"
+killallenemiesinow.Parent = Gradient
+killallenemiesinow.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+killallenemiesinow.Position = UDim2.new(0.0427135676, 0, 0.25, 0)
+killallenemiesinow.Size = UDim2.new(0, 35, 0, 35)
+killallenemiesinow.Font = Enum.Font.SourceSans
+killallenemiesinow.Text = ""
+killallenemiesinow.TextColor3 = Color3.fromRGB(0, 0, 0)
+killallenemiesinow.TextSize = 14.000
+
+-- Scripts:
+
+local function PLUNPYG_fake_script() -- Gradient.dragScript 
+	local script = Instance.new('LocalScript', Gradient)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(PLUNPYG_fake_script)()
+local function MYCPYO_fake_script() -- getcoinsbutton.givemoney 
+	local script = Instance.new('LocalScript', getcoinsbutton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		
+		-- Script generated by SimpleSpy - credits to exx#9394
+	
+		local args = {
+			[1] = "\232\147\157\230\139\147\231\159\179",
+			[2] = 1000000,
+			[3] = -1
+		}
+	
+		game:GetService("ReplicatedStorage").event.magbuy:FireServer(unpack(args))
+		
+	end)
+end
+coroutine.wrap(MYCPYO_fake_script)()
+local function GMLUW_fake_script() -- Bringtreasures.btScript 
+	local script = Instance.new('LocalScript', Bringtreasures)
+
+	local qq = false
+	local ww = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		
+		if qq == false then
+			qq = true
+			
+			if ww == false then
+				script.Parent.BackgroundColor3 = Color3.new(0,255,0)
+				while qq do
+					wait(.1)
+				
+				for i,v in pairs(game:GetService("Workspace").Treasure:GetChildren()) do
+	
+					v.CanCollide = false
+	
+					v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	
+					wait()
+				end
+				end
+			end
+		else
+			script.Parent.BackgroundColor3 = Color3.new(255,0,0)
+			qq = false
+		end
+		ww = false
+		
+	end)
+end
+coroutine.wrap(GMLUW_fake_script)()
+local function KPLTCY_fake_script() -- killallenemiesinow.koweScript 
+	local script = Instance.new('LocalScript', killallenemiesinow)
+
+	local ff = false
+	local gg = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		
+		if ff == false then
+			ff= true
+			
+			if gg == false then
+				
+				script.Parent.BackgroundColor3 = Color3.new(0,255,0)
+				while ff do
+					wait(.3)
+					for i,v in pairs(game:GetService("Workspace").enemy:GetChildren()) do
+	
+						game:GetService("ReplicatedStorage").event.attack:FireServer(v,math.huge,"\230\149\140\228\186\186")
+	
+					end
+				end
+				
+			end
+		else
+			script.Parent.BackgroundColor3 = Color3.new(255,0,0)
+			ff = false
+		end
+		
+		gg = false
+		
+	end)
+end
+coroutine.wrap(KPLTCY_fake_script)()
