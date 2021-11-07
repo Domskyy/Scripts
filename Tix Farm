@@ -71,6 +71,7 @@ local function NIBJL_fake_script() -- TextButton.LocalScript
 						wait(.1)
 							
 						end	
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 						end
 				end
 				
