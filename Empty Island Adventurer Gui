@@ -17,6 +17,11 @@ local UICorner_3 = Instance.new("UICorner")
 local TextLabel = Instance.new("TextLabel")
 local Bringtreasures = Instance.new("TextButton")
 local killallenemiesinow = Instance.new("TextButton")
+local breakores = Instance.new("TextButton")
+local breakores_2 = Instance.new("TextLabel")
+local getcandies = Instance.new("TextButton")
+local ccandies = Instance.new("TextLabel")
+local guiTitle2 = Instance.new("TextLabel")
 
 --Properties:
 
@@ -51,11 +56,12 @@ btow.TextSize = 14.000
 
 guiTitle.Name = "guiTitle"
 guiTitle.Parent = Gradient
-guiTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-guiTitle.Size = UDim2.new(0, 398, 0, 41)
+guiTitle.BackgroundColor3 = Color3.fromRGB(200, 107, 176)
+guiTitle.Position = UDim2.new(-0.00251256279, 0, 0, 0)
+guiTitle.Size = UDim2.new(0, 399, 0, 41)
 guiTitle.Font = Enum.Font.GothamBlack
 guiTitle.Text = "EIA Gui"
-guiTitle.TextColor3 = Color3.fromRGB(0, 0, 0)
+guiTitle.TextColor3 = Color3.fromRGB(170, 85, 127)
 guiTitle.TextSize = 48.000
 
 kowe.Name = "kowe"
@@ -132,9 +138,64 @@ killallenemiesinow.Text = ""
 killallenemiesinow.TextColor3 = Color3.fromRGB(0, 0, 0)
 killallenemiesinow.TextSize = 14.000
 
+breakores.Name = "breakores"
+breakores.Parent = Gradient
+breakores.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+breakores.Position = UDim2.new(0.454773843, 0, 0.25, 0)
+breakores.Size = UDim2.new(0, 35, 0, 35)
+breakores.Font = Enum.Font.SourceSans
+breakores.Text = ""
+breakores.TextColor3 = Color3.fromRGB(0, 0, 0)
+breakores.TextSize = 14.000
+
+breakores_2.Name = "breakores"
+breakores_2.Parent = Gradient
+breakores_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+breakores_2.BackgroundTransparency = 1.000
+breakores_2.BorderSizePixel = 0
+breakores_2.Position = UDim2.new(0.439698517, 0, 0.231481478, 0)
+breakores_2.Size = UDim2.new(0, 168, 0, 42)
+breakores_2.Font = Enum.Font.SourceSans
+breakores_2.Text = "Break Ores"
+breakores_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+breakores_2.TextSize = 14.000
+
+getcandies.Name = "getcandies"
+getcandies.Parent = Gradient
+getcandies.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+getcandies.Position = UDim2.new(0.454773843, 0, 0.5, 0)
+getcandies.Size = UDim2.new(0, 35, 0, 35)
+getcandies.Font = Enum.Font.SourceSans
+getcandies.Text = ""
+getcandies.TextColor3 = Color3.fromRGB(0, 0, 0)
+getcandies.TextSize = 14.000
+
+ccandies.Name = "ccandies"
+ccandies.Parent = Gradient
+ccandies.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ccandies.BackgroundTransparency = 1.000
+ccandies.BorderSizePixel = 0
+ccandies.Position = UDim2.new(0.469849259, 0, 0.481481493, 0)
+ccandies.Size = UDim2.new(0, 168, 0, 42)
+ccandies.Font = Enum.Font.SourceSans
+ccandies.Text = "Collect Candies"
+ccandies.TextColor3 = Color3.fromRGB(0, 0, 0)
+ccandies.TextSize = 14.000
+
+guiTitle2.Name = "guiTitle2"
+guiTitle2.Parent = Gradient
+guiTitle2.BackgroundColor3 = Color3.fromRGB(155, 33, 255)
+guiTitle2.BackgroundTransparency = 1.000
+guiTitle2.Position = UDim2.new(0.0165725779, 0, -0.027777778, 0)
+guiTitle2.Size = UDim2.new(0, 391, 0, 47)
+guiTitle2.Font = Enum.Font.GothamBlack
+guiTitle2.Text = "EIA Gui"
+guiTitle2.TextColor3 = Color3.fromRGB(170, 0, 127)
+guiTitle2.TextSize = 48.000
+
 -- Scripts:
 
-local function PLUNPYG_fake_script() -- Gradient.dragScript 
+local function SAAV_fake_script() -- Gradient.dragScript 
 	local script = Instance.new('LocalScript', Gradient)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -177,8 +238,8 @@ local function PLUNPYG_fake_script() -- Gradient.dragScript
 		end
 	end)
 end
-coroutine.wrap(PLUNPYG_fake_script)()
-local function MYCPYO_fake_script() -- getcoinsbutton.givemoney 
+coroutine.wrap(SAAV_fake_script)()
+local function GLWZ_fake_script() -- getcoinsbutton.givemoney 
 	local script = Instance.new('LocalScript', getcoinsbutton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -195,8 +256,8 @@ local function MYCPYO_fake_script() -- getcoinsbutton.givemoney
 		
 	end)
 end
-coroutine.wrap(MYCPYO_fake_script)()
-local function GMLUW_fake_script() -- Bringtreasures.btScript 
+coroutine.wrap(GLWZ_fake_script)()
+local function ERCUMQ_fake_script() -- Bringtreasures.btScript 
 	local script = Instance.new('LocalScript', Bringtreasures)
 
 	local qq = false
@@ -230,8 +291,8 @@ local function GMLUW_fake_script() -- Bringtreasures.btScript
 		
 	end)
 end
-coroutine.wrap(GMLUW_fake_script)()
-local function KPLTCY_fake_script() -- killallenemiesinow.koweScript 
+coroutine.wrap(ERCUMQ_fake_script)()
+local function QFWCSW_fake_script() -- killallenemiesinow.koweScript 
 	local script = Instance.new('LocalScript', killallenemiesinow)
 
 	local ff = false
@@ -264,4 +325,70 @@ local function KPLTCY_fake_script() -- killallenemiesinow.koweScript
 		
 	end)
 end
-coroutine.wrap(KPLTCY_fake_script)()
+coroutine.wrap(QFWCSW_fake_script)()
+local function WXAJFOS_fake_script() -- breakores.btScript 
+	local script = Instance.new('LocalScript', breakores)
+
+	local qq = false
+	local ww = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		
+		if qq == false then
+			qq = true
+			
+			if ww == false then
+				script.Parent.BackgroundColor3 = Color3.new(0,255,0)
+				while qq do
+					wait()
+					
+					for i,v in pairs(game.workspace.stone:GetChildren()) do
+	
+						game:GetService("ReplicatedStorage").event.attack:FireServer(v,math.huge,"\231\159\191\231\159\179")
+	
+					end	
+					end
+			end
+		else
+			script.Parent.BackgroundColor3 = Color3.new(255,0,0)
+			qq = false
+		end
+		ww = false
+		
+	end)
+end
+coroutine.wrap(WXAJFOS_fake_script)()
+local function TXAUZI_fake_script() -- getcandies.koweScript 
+	local script = Instance.new('LocalScript', getcandies)
+
+	local ff = false
+	local gg = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		
+		if ff == false then
+			ff= true
+			
+			if gg == false then
+				
+				script.Parent.BackgroundColor3 = Color3.new(0,255,0)
+				while ff do
+					wait(.05)
+					for i,v in pairs(game:GetService("Workspace").lucky:GetChildren()) do
+	
+						v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	
+					end
+				end
+				
+			end
+		else
+			script.Parent.BackgroundColor3 = Color3.new(255,0,0)
+			ff = false
+		end
+		
+		gg = false
+		
+	end)
+end
+coroutine.wrap(TXAUZI_fake_script)()
