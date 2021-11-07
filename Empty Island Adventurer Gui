@@ -375,7 +375,7 @@ local function TXAUZI_fake_script() -- getcandies.koweScript
 				while ff do
 					
 					for i,v in pairs(game:GetService("Workspace").lucky:GetChildren()) do
-						v.CanCollide = false
+						
 						v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 						wait(.15)
 					end
