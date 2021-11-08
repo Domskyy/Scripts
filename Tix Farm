@@ -12,6 +12,7 @@ local TextButton = Instance.new("TextButton")
 
 TixAutoFarmGui.Name = "TixAutoFarmGui"
 TixAutoFarmGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+TixAutoFarmGui.ResetOnSpawn = false
 
 Frame.Name = "Frame"
 Frame.Parent = TixAutoFarmGui
