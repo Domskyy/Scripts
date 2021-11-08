@@ -62,14 +62,15 @@ local function NIBJL_fake_script() -- TextButton.LocalScript
 local old = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame				
 script.Parent.BackgroundColor3 = Color3.new(0,1,0)
 				while ff do
-					
+					wait()
 
 for i,v in pairs(game.workspace:GetDescendants()) do
     if v:IsA("Script") and v.Parent:IsA("UnionOperation") then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-    wait(.1)
+    
     end
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = old
+wait(.3)
     end
 		else
 			ff = false
