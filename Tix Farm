@@ -3,85 +3,96 @@
 
 -- Instances:
 
-local TixAutoFarmGui = Instance.new("ScreenGui")
-local Frame = Instance.new("ImageLabel")
-local TextLabel = Instance.new("TextLabel")
-local TextButton = Instance.new("TextButton")
+local tixGui = Instance.new("ScreenGui")
+local roundified = Instance.new("ImageLabel")
+local title = Instance.new("TextLabel")
+local button = Instance.new("TextButton")
 
 --Properties:
 
-TixAutoFarmGui.Name = "TixAutoFarmGui"
-TixAutoFarmGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-TixAutoFarmGui.ResetOnSpawn = false
+tixGui.Name = "tixGui"
+tixGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+tixGui.ResetOnSpawn = false
 
-Frame.Name = "Frame"
-Frame.Parent = TixAutoFarmGui
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BackgroundTransparency = 1.000
-Frame.Position = UDim2.new(0.63188833, 0, 0.389240503, 0)
-Frame.Size = UDim2.new(0, 156, 0, 156)
-Frame.Image = "rbxassetid://3570695787"
-Frame.ImageColor3 = Color3.fromRGB(27, 42, 53)
-Frame.ScaleType = Enum.ScaleType.Slice
-Frame.SliceCenter = Rect.new(100, 100, 100, 100)
-Frame.SliceScale = 0.120
+roundified.Name = "roundified"
+roundified.Parent = tixGui
+roundified.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+roundified.BackgroundTransparency = 1.000
+roundified.Position = UDim2.new(0.724467278, 0, 0.265822768, 0)
+roundified.Size = UDim2.new(0, 140, 0, 140)
+roundified.Image = "rbxassetid://3570695787"
+roundified.ImageColor3 = Color3.fromRGB(27, 42, 53)
+roundified.ScaleType = Enum.ScaleType.Slice
+roundified.SliceCenter = Rect.new(100, 100, 100, 100)
+roundified.SliceScale = 0.120
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.0576923043, 0, 0.051282052, 0)
-TextLabel.Size = UDim2.new(0, 138, 0, 50)
-TextLabel.Font = Enum.Font.SciFi
-TextLabel.Text = "Click to activate"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextSize = 17.000
+title.Name = "title"
+title.Parent = roundified
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundTransparency = 1.000
+title.Position = UDim2.new(0.0571428537, 0, 0, 0)
+title.Size = UDim2.new(0, 124, 0, 50)
+title.Font = Enum.Font.Sarpanch
+title.Text = "Click to activate"
+title.TextColor3 = Color3.fromRGB(0, 0, 0)
+title.TextSize = 19.000
 
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.339743614, 0, 0.339743555, 0)
-TextButton.Size = UDim2.new(0, 50, 0, 50)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = ""
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextSize = 14.000
+button.Name = "button"
+button.Parent = roundified
+button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+button.Position = UDim2.new(0.321428537, 0, 0.357142866, 0)
+button.Size = UDim2.new(0, 50, 0, 50)
+button.Font = Enum.Font.SourceSans
+button.TextColor3 = Color3.fromRGB(0, 0, 0)
+button.TextSize = 14.000
 
 -- Scripts:
 
-local function NIBJL_fake_script() -- TextButton.LocalScript 
-	local script = Instance.new('LocalScript', TextButton)
+local function JUVPPU_fake_script() -- button.tixScript 
+	local script = Instance.new('LocalScript', button)
 
 	local ff = false
 	local gg = false
+	
 	script.Parent.MouseButton1Click:Connect(function()
 		
 		if ff == false then
-			ff= true
+			
+			ff = true
 			
 			if gg == false then
-local old = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame				
-script.Parent.BackgroundColor3 = Color3.new(0,1,0)
+				
+				local old = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+				
+				script.Parent.BackgroundColor3 = Color3.new(0,1,0)
+				
 				while ff do
-					wait()
-
-for i,v in pairs(game.workspace:GetDescendants()) do
-    if v:IsA("Script") and v.Parent:IsA("UnionOperation") then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-    
-    end
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = old
-wait(.3)
-    end
+				wait()
+				for i,v in ipairs(game.workspace:GetDescendants()) do
+						if v:FindFirstChild("Collect") or v:FindFirstChild("CollectScript") then
+							
+						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+						wait(.22)
+					end
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = old
+					
+					end
+					
+				end
+				
+			end
 		else
-			ff = false
 			script.Parent.BackgroundColor3 = Color3.new(1,0,0)
+			
+			ff = false
+		    
 		end
 		gg = false
 	end)
 end
-coroutine.wrap(NIBJL_fake_script)()
-local function AFPZ_fake_script() -- Frame.LocalScript 
-	local script = Instance.new('LocalScript', Frame)
+coroutine.wrap(JUVPPU_fake_script)()
+local function EOXUJLY_fake_script() -- roundified.dragscript 
+	local script = Instance.new('LocalScript', roundified)
 
 	local UserInputService = game:GetService("UserInputService")
 	
@@ -123,4 +134,4 @@ local function AFPZ_fake_script() -- Frame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(AFPZ_fake_script)()
+coroutine.wrap(EOXUJLY_fake_script)()
