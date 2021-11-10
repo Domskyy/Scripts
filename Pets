@@ -1,0 +1,61 @@
+local args = {
+    [1] = "CraftPet",
+    [2] = {
+        [1] = script.Parent.Parent.ttbox.Text,
+        [2] = "Gold",
+        [3] = {
+            [1] = {
+                ["PetID"] = "211035346-632",
+                ["Locked"] = false,
+                ["PetName"] = "Doggy"
+            },
+            [2] = {
+                ["PetID"] = "211035346-633",
+                ["Locked"] = false,
+                ["PetName"] = "Doggy"
+            },
+            [3] = {
+                ["PetID"] = "211035346-638",
+                ["Locked"] = false,
+                ["PetName"] = "Doggy"
+            },
+            [4] = {
+                ["PetID"] = "211035346-640",
+                ["Locked"] = false,
+                ["PetName"] = "Doggy"
+            },
+            [5] = {
+                ["PetID"] = "211035346-642",
+                ["Locked"] = false,
+                ["PetName"] = "Doggy"
+            },
+            [6] = {
+                ["PetID"] = "211035346-647",
+                ["Locked"] = false,
+                ["PetName"] = "Doggy"
+            },
+            [7] = {
+                ["PetID"] = "211035346-648",
+                ["Locked"] = false,
+                ["PetName"] = "Doggy"
+            },
+            [8] = {
+                ["PetID"] = "211035346-649",
+                ["Locked"] = false,
+                ["PetName"] = "Doggy"
+            },
+            [9] = {
+                ["PetID"] = "211035346-651",
+                ["Locked"] = false,
+                ["PetName"] = "Doggy"
+            },
+            [10] = {
+                ["PetID"] = "211035346-652",
+                ["Locked"] = false,
+                ["PetName"] = "Doggy"
+            }
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").GameClient.Events.RemoteFunction.HandlePet:InvokeServer(unpack(args))
