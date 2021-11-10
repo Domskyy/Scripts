@@ -1,7 +1,7 @@
 local args = {
     [1] = "CraftPet",
     [2] = {
-        [1] = script.Parent.Parent.ttbox.Text,
+        [1] = script.Parent.Parent.ttbox.Text.Text,
         [2] = "Gold",
         [3] = {
             [1] = {
