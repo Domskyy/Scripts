@@ -274,14 +274,15 @@ local function ERCUMQ_fake_script() -- Bringtreasures.btScript
 				while qq do
 					wait(.1)
 				
-				for i,v in pairs(game:GetService("Workspace").Treasure:GetChildren()) do
+				for i,v in pairs(game:GetService("Workspace").Treasure:GetDescendants()) do
 	
-					v.CanCollide = false
-	
-					v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-	
-					wait()
-				end
+					if v:IsA("TouchTransmitter") then
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
+end
+end
+				
 				end
 			end
 		else
