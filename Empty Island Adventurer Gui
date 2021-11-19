@@ -375,11 +375,14 @@ local function TXAUZI_fake_script() -- getcandies.koweScript
 				script.Parent.BackgroundColor3 = Color3.new(0,255,0)
 				while ff do
 					
-					for i,v in pairs(game:GetService("Workspace").lucky:GetChildren()) do
-						
-						v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-						wait(.30)
-					end
+				for i,v in pairs(game:GetService("Workspace").lucky:GetDescendants()) do
+    
+    if v:IsA("TouchTransmitter") then
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
+wait()
+firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
+end
+end
 				end
 				
 			end
