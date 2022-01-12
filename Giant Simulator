@@ -1,7 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Anti-Kick/main/Anti%20Kick.lua"))()
-
-wait()
-
 -- Gui to Lua
 -- Version: 3.2
 
@@ -128,3 +124,6 @@ local function UTSEH_fake_script() -- gui.dragdeez
 	end)
 end
 coroutine.wrap(UTSEH_fake_script)()
+
+wait()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Anti-Kick/main/Anti%20Kick.lua"))()
