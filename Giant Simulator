@@ -1,3 +1,7 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Anti-Kick/main/Anti%20Kick.lua"))()
+
+wait()
+
 -- Gui to Lua
 -- Version: 3.2
 
@@ -14,6 +18,7 @@ local title = Instance.new("TextLabel")
 Realgui.Name = "Realgui"
 Realgui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 Realgui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Ralgui.ResetOnSpawn = false
 
 gui.Name = "gui"
 gui.Parent = Realgui
