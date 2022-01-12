@@ -1,0 +1,125 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Realgui = Instance.new("ScreenGui")
+local gui = Instance.new("Frame")
+local guifromsquidgame = Instance.new("ImageLabel")
+local button = Instance.new("TextButton")
+local title = Instance.new("TextLabel")
+
+--Properties:
+
+Realgui.Name = "Realgui"
+Realgui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Realgui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+gui.Name = "gui"
+gui.Parent = Realgui
+gui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+gui.Position = UDim2.new(0.269399703, 0, 0.324246764, 0)
+gui.Size = UDim2.new(0, 135, 0, 129)
+
+guifromsquidgame.Name = "guifromsquidgame"
+guifromsquidgame.Parent = gui
+guifromsquidgame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+guifromsquidgame.Size = UDim2.new(0, 135, 0, 129)
+guifromsquidgame.Image = "http://www.roblox.com/asset/?id=8508980527"
+
+button.Name = "button"
+button.Parent = guifromsquidgame
+button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+button.BackgroundTransparency = 0.500
+button.Position = UDim2.new(0.311111122, 0, 0.387596905, 0)
+button.Size = UDim2.new(0, 50, 0, 50)
+button.Font = Enum.Font.SourceSans
+button.Text = ""
+button.TextColor3 = Color3.fromRGB(0, 0, 0)
+button.TextSize = 14.000
+
+title.Name = "title"
+title.Parent = guifromsquidgame
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundTransparency = 1.000
+title.Size = UDim2.new(0, 135, 0, 50)
+title.Font = Enum.Font.Ubuntu
+title.Text = "AutoFarm"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 20.000
+
+-- Scripts:
+
+local function DNAX_fake_script() -- button.OnOff 
+	local script = Instance.new('LocalScript', button)
+
+	local ff = false
+	local gg = false
+	script.Parent.MouseButton1Click:Connect(function()	
+	if ff == false then
+	ff = true		
+	if gg == false then			
+	script.Parent.BackgroundColor3 = Color3.new(0,1,0)			
+	while ff do
+	    wait()
+	for i,v in ipairs(game.Workspace:GetDescendants()) do
+	if v.Name == "ResourceNode" and v.NodeType.Value == 5 then
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+	wait(.2)
+	end
+	end
+	end			
+	end
+	else
+	script.Parent.BackgroundColor3 = Color3.new(1,0,0)
+			
+	ff = false
+	end	
+	gg = false
+	end)
+end
+coroutine.wrap(DNAX_fake_script)()
+local function UTSEH_fake_script() -- gui.dragdeez 
+	local script = Instance.new('LocalScript', gui)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(UTSEH_fake_script)()
