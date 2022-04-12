@@ -1,0 +1,2 @@
+_G.AuthKey="HUGE_TCqN4hrFejiSPHiv"
+loadstring(game:HttpGet("https://HugeGames.io/script"))()
