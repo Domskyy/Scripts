@@ -1,0 +1,98 @@
+repeat wait() until game:IsLoaded()
+	if game.PlaceId == 9551640993 then
+
+		-- Gui to Lua
+		-- Version: 3.2
+
+		-- Instances:
+
+		local coso = Instance.new("ScreenGui")
+		local Frame = Instance.new("ImageLabel")
+		local TextLabel = Instance.new("TextLabel")
+
+		--Properties:
+
+		coso.Name = "coso"
+		coso.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+		coso.ResetOnSpawn = false
+		coso.DisplayOrder = 999999
+
+		Frame.Name = "Frame"
+		Frame.Parent = coso
+		Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Frame.BackgroundTransparency = 1.000
+		Frame.Position = UDim2.new(0.267015696, 0, 0.316227466, 0)
+		Frame.Size = UDim2.new(0, 115, 0, 44)
+		Frame.Image = "rbxassetid://3570695787"
+		Frame.ImageColor3 = Color3.fromRGB(85, 85, 127)
+		Frame.ScaleType = Enum.ScaleType.Slice
+		Frame.SliceCenter = Rect.new(100, 100, 100, 100)
+		Frame.SliceScale = 0.120
+
+		TextLabel.Parent = Frame
+		TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TextLabel.BackgroundTransparency = 1.000
+		TextLabel.Size = UDim2.new(0, 115, 0, 44)
+		TextLabel.Font = Enum.Font.SourceSans
+		TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+		TextLabel.TextSize = 14.000
+
+		-- Scripts:
+
+		local function PBLRP_fake_script() -- TextLabel.LocalScript 
+			local script = Instance.new('LocalScript', TextLabel)
+
+			script.Parent.Text = game:GetService("Players").Trenker780.PlayerGui.ScreenGui.Rebirth.Frame.Buy.Frame.Container.Label.Text
+
+			game:GetService("Players").Trenker780.PlayerGui.ScreenGui.Rebirth.Frame.Buy.Frame.Container.Label.Changed:Connect(function()
+
+				script.Parent.Text = game:GetService("Players").Trenker780.PlayerGui.ScreenGui.Rebirth.Frame.Buy.Frame.Container.Label.Text
+
+			end)
+		end
+		coroutine.wrap(PBLRP_fake_script)()
+		local function GUZOZL_fake_script() -- Frame.LocalScript 
+			local script = Instance.new('LocalScript', Frame)
+
+			local UserInputService = game:GetService("UserInputService")
+
+			local gui = script.Parent
+
+			local dragging
+			local dragInput
+			local dragStart
+			local startPos
+
+			local function update(input)
+				local delta = input.Position - dragStart
+				gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			end
+
+			gui.InputBegan:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+					dragging = true
+					dragStart = input.Position
+					startPos = gui.Position
+
+					input.Changed:Connect(function()
+						if input.UserInputState == Enum.UserInputState.End then
+							dragging = false
+						end
+					end)
+				end
+			end)
+
+			gui.InputChanged:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+					dragInput = input
+				end
+			end)
+
+			UserInputService.InputChanged:Connect(function(input)
+				if input == dragInput and dragging then
+					update(input)
+				end
+			end)
+		end
+		coroutine.wrap(GUZOZL_fake_script)()
+end
