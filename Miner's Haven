@@ -198,11 +198,11 @@ local function KNQZY_fake_script() -- Getcrates.gcS
 				script.Parent.BackgroundColor3 = Color3.new(0,0,1)
 				local old = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 				while ff do 
-					wait(.1)
-					for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+					wait()
+					for i,v in pairs(workspace.Boxes:GetChildren()) do
 						if v:FindFirstChild("Open") then
 							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-							wait(.3)
+							wait()
 	
 						end
 						game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = old
